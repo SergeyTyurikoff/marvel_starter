@@ -4,3 +4,6 @@ useEffect()
 useCallback() и useMemo() - кэширование функций и значений. Мемоизация.
 useRef()
 Кастомные хуки
+
+batching
+flushSync - разъединение команд
