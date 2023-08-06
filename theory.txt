@@ -1,0 +1,6 @@
+Хуки:
+useState()
+useEffect()
+useCallback() и useMemo() - кэширование функций и значений. Мемоизация.
+useRef()
+Кастомные хуки

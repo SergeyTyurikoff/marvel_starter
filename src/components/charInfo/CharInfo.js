@@ -1,13 +1,12 @@
-import {useState, useEffect} from "react";
-import PropTypes from "prop-types";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import useMarvelService from "../../services/MarvelService";
-import Spinner from "../spinner/Spinner";
-import ErrorMessage from "../errorMessage/ErrorMessage";
-import Skeleton from "../skeleton/Skeleton";
+import useMarvelService from '../../services/MarvelService';
+import Spinner from '../spinner/Spinner';
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import Skeleton from '../skeleton/Skeleton';
 
 import './charInfo.scss';
-
 
 const CharInfo = (props) => {
 
@@ -16,7 +15,7 @@ const CharInfo = (props) => {
     const {loading, error, getCharacter, clearError} = useMarvelService();
 
     useEffect(() => {
-        updateChar();
+        updateChar()
     }, [props.charId])
 
     const updateChar = () => {
@@ -31,7 +30,7 @@ const CharInfo = (props) => {
     }
 
     const onCharLoaded = (char) => {
-        setChar(char)
+        setChar(char);
     }
 
     const skeleton = char || loading || error ? null : <Skeleton/>;
@@ -96,7 +95,7 @@ const View = ({char}) => {
 }
 
 CharInfo.propTypes = {
-    charId: PropTypes.number,
+    charId: PropTypes.number
 }
 
 export default CharInfo;

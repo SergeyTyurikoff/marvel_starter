@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef} from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -13,14 +13,14 @@ const CharList = (props) => {
     const [offset, setOffset] = useState(210);
     const [charEnded, setCharEnded] = useState(false);
 
-    const {loading, error, getAllCharacters}  = useMarvelService();
+    const {loading, error, getAllCharacters} = useMarvelService();
 
     useEffect(() => {
-        onRequest(offset, true)
+        onRequest(offset, true);
     }, [])
 
     const onRequest = (offset, initial) => {
-        initial ? setNewItemLoading(false) : setNewItemLoading(true)
+        initial ? setNewItemLoading(false) : setNewItemLoading(true);
         getAllCharacters(offset)
             .then(onCharListLoaded)
     }
@@ -31,10 +31,10 @@ const CharList = (props) => {
             ended = true;
         }
 
-        setCharList(charList => [...charList, ...newCharList])
-        setNewItemLoading(newItemLoading => false)
-        setOffset(offset => offset + 9)
-        setCharEnded(charEnded => ended)
+        setCharList(charList => [...charList, ...newCharList]);
+        setNewItemLoading(newItemLoading => false);
+        setOffset(offset => offset + 9);
+        setCharEnded(charEnded => ended);
     }
 
     const itemRefs = useRef([]);
@@ -46,10 +46,10 @@ const CharList = (props) => {
     }
 
     function renderItems(arr) {
-        const items = arr.map((item, i) => {
-            let imgStyle = {'objectFit': 'cover'};
+        const items =  arr.map((item, i) => {
+            let imgStyle = {'objectFit' : 'cover'};
             if (item.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
-                imgStyle = {'objectFit': 'unset'};
+                imgStyle = {'objectFit' : 'unset'};
             }
 
             return (
@@ -73,7 +73,6 @@ const CharList = (props) => {
                 </li>
             )
         });
-
         return (
             <ul className="char__grid">
                 {items}
