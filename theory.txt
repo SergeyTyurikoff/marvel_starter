@@ -16,3 +16,9 @@ React Context useContext
 useReducer
 
 Formik, Yup
+
+SSR (next.js), Prerendering (react snap)
+
+react helmet - работа с СЕО, мета-теги
+
+Finite-state machine - принцип конечного автомата. Машины состояний
