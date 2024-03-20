@@ -11,6 +11,7 @@ const SingleCharacterLayout = lazy(() => import('../pages/singleCharacterLayout/
 const SinglePage = lazy(() => import('../pages/SinglePage'));
 
 const App = () => {
+
     return (
         <Router>
             <div className="app">
@@ -18,7 +19,7 @@ const App = () => {
                 <main>
                     <Suspense fallback={<Spinner/>}>
                         <Routes>
-                            <Route path="/" element={<MainPage/>}/>
+                            <Route path='/' element={<MainPage/>}/>
                             <Route path="/comics" element={<ComicsPage/>}/>
                             <Route path="/comics/:id" element={<SinglePage Component={SingleComicLayout} dataType="comic"/>}/>
                             <Route path="/characters/:id" element={<SinglePage Component={SingleCharacterLayout} dataType="character"/>}/>
